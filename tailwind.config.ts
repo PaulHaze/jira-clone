@@ -8,9 +8,7 @@ export default {
   darkMode: ['selector', '[data-theme="dark"]'],
   theme: {
     extend: {
-      colors: {
-        'primary-muted': 'oklch(var(--primary-muted) / <alpha-value>)',
-      },
+      colors: {},
       fontSize: {
         xs: '0.75rem',
         sm: '0.875rem',
@@ -72,7 +70,8 @@ export default {
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'gradient-conic':
+          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
     },
   },

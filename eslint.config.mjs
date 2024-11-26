@@ -52,7 +52,7 @@ export default tseslint.config(
   tsConfig,
   pluginReact.configs.flat.recommended,
   pluginReact.configs.flat['jsx-runtime'],
-  pluginImport.flatConfigs.recommended,
+  // pluginImport.flatConfigs.recommended,
   nextLint,
 
   // Turn off prettier conflicts
