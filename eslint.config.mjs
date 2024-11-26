@@ -3,6 +3,7 @@ import eslint from '@eslint/js';
 import pluginNext from '@next/eslint-plugin-next';
 import tseslint from 'typescript-eslint';
 import pluginReact from 'eslint-plugin-react';
+import pluginImport from 'eslint-plugin-import';
 import eslintConfigPrettier from 'eslint-config-prettier';
 
 const baseConfig = {
@@ -47,16 +48,14 @@ const nextLint = {
 };
 
 export default tseslint.config(
-  // Use tseslint.config instead of direct array export
   baseConfig,
   tsConfig,
-
-  // React plugins
   pluginReact.configs.flat.recommended,
   pluginReact.configs.flat['jsx-runtime'],
+  pluginImport.flatConfigs.recommended,
   nextLint,
 
-  // Prettier and additional configs
+  // Turn off prettier conflicts
   eslintConfigPrettier,
 
   // Global Ignore
