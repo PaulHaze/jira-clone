@@ -33,18 +33,18 @@ const tsConfig = {
   rules: {},
 };
 
-const nextPluginConfig = {
-  name: 'Next Plugin Config',
-  files: ['**/*.{ts,tsx}'],
-  plugins: {
-    '@next/next': nextPlugin,
-  },
-  rules: {
-    ...nextPlugin.configs.recommended.rules,
-    ...nextPlugin.configs['core-web-vitals'].rules,
-    '@next/next/no-img-element': 'off',
-  },
-};
+// const nextPluginConfig = {
+//   name: 'Next Plugin Config',
+//   files: ['**/*.{ts,tsx}'],
+//   plugins: {
+//     '@next/next': nextPlugin,
+//   },
+//   rules: {
+//     ...nextPlugin.configs.recommended.rules,
+//     ...nextPlugin.configs['core-web-vitals'].rules,
+//     '@next/next/no-img-element': 'off',
+//   },
+// };
 
 export default tseslint.config(
   // Use tseslint.config instead of direct array export
@@ -56,7 +56,19 @@ export default tseslint.config(
   pluginReact.configs.flat['jsx-runtime'],
 
   // Next.js plugin
-  nextPluginConfig,
+  {
+    plugins: {
+      '@next/next': nextPlugin,
+    },
+  },
+  {
+    files: ['**/*.ts', '**/*.tsx'],
+    rules: {
+      ...nextPlugin.configs.recommended.rules,
+      ...nextPlugin.configs['core-web-vitals'].rules,
+      '@next/next/no-img-element': 'off',
+    },
+  },
 
   // Prettier and additional configs
   eslintConfigPrettier,
