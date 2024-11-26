@@ -1,0 +1,58 @@
+.theme-toggle {
+  -webkit-tap-highlight-color: transparent;
+  outline-offset: 5px;
+  @apply touch-manipulation rounded-full transition-colors duration-300 hover:text-stone-700 dark:text-white dark:hover:text-white/70;
+
+  /* make button bigger for touchscreens */
+  @media (hover: none) {
+    @apply h-28 w-28;
+  }
+
+  svg {
+    inline-size: 100%;
+    block-size: 100%;
+    stroke-linecap: round;
+  }
+}
+
+.sun-and-moon {
+  .sun {
+    transition: transform 0.5s cubic-bezier(0.5, 1.25, 0.75, 1.25);
+  }
+  .sun-beams {
+    transition:
+      transform 0.5s cubic-bezier(0.5, 1.5, 0.75, 1.25),
+      opacity 0.5s cubic-bezier(0.25, 0, 0.3, 1);
+  }
+
+  [data-theme='dark'] & {
+    .sun {
+      transform: scale(1.75);
+      transition-timing-function: cubic-bezier(0.25, 0, 0.3, 1);
+      transition-duration: 0.25s;
+    }
+    .sun-beams {
+      transform: rotateZ(-45deg) scale(0);
+      transition-duration: 0.15s;
+    }
+    .moon {
+      circle {
+        transform: translateX(-8px);
+        transition: transform 0.75s cubic-bezier(0, 0, 0, 1);
+        transition-delay: 0.25s;
+        transition-duration: 0.75s;
+
+        @supports (cx: 1px) {
+          transform: translateX(0);
+          cx: 16px;
+          transition: cx 0.75s cubic-bezier(0, 0, 0, 1);
+          transition-delay: 0.25s;
+        }
+      }
+    }
+  }
+
+  :is(.moon, .sun, .sun-beams) {
+    transform-origin: center center;
+  }
+}
