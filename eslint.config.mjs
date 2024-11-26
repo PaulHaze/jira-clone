@@ -1,6 +1,6 @@
 import globals from 'globals';
 import eslint from '@eslint/js';
-import nextPlugin from '@next/eslint-plugin-next';
+import pluginNext from '@next/eslint-plugin-next';
 import tseslint from 'typescript-eslint';
 import pluginReact from 'eslint-plugin-react';
 import eslintConfigPrettier from 'eslint-config-prettier';
@@ -33,18 +33,18 @@ const tsConfig = {
   rules: {},
 };
 
-// const nextPluginConfig = {
-//   name: 'Next Plugin Config',
-//   files: ['**/*.{ts,tsx}'],
-//   plugins: {
-//     '@next/next': nextPlugin,
-//   },
-//   rules: {
-//     ...nextPlugin.configs.recommended.rules,
-//     ...nextPlugin.configs['core-web-vitals'].rules,
-//     '@next/next/no-img-element': 'off',
-//   },
-// };
+const nextLint = {
+  name: 'NextJs Plugin Config',
+  plugins: {
+    '@next/next': pluginNext,
+  },
+  files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
+  rules: {
+    ...pluginNext.configs.recommended.rules,
+    ...pluginNext.configs['core-web-vitals'].rules,
+    '@next/next/no-img-element': 'off',
+  },
+};
 
 export default tseslint.config(
   // Use tseslint.config instead of direct array export
@@ -54,21 +54,7 @@ export default tseslint.config(
   // React plugins
   pluginReact.configs.flat.recommended,
   pluginReact.configs.flat['jsx-runtime'],
-
-  // Next.js plugin
-  {
-    plugins: {
-      '@next/next': nextPlugin,
-    },
-  },
-  {
-    files: ['**/*.ts', '**/*.tsx'],
-    rules: {
-      ...nextPlugin.configs.recommended.rules,
-      ...nextPlugin.configs['core-web-vitals'].rules,
-      '@next/next/no-img-element': 'off',
-    },
-  },
+  nextLint,
 
   // Prettier and additional configs
   eslintConfigPrettier,
