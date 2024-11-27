@@ -18,6 +18,30 @@
   h5 {
     @apply text-lg font-normal leading-normal;
   }
+  .bg-primary * {
+    @apply text-primary-content;
+  }
+  .bg-secondary * {
+    @apply text-secondary-content;
+  }
+  .bg-accent * {
+    @apply text-accent-content;
+  }
+  .bg-neutral * {
+    @apply text-neutral-content;
+  }
+  .bg-info * {
+    @apply text-info-content;
+  }
+  .bg-success * {
+    @apply text-success-content;
+  }
+  .bg-warning * {
+    @apply text-warning-content;
+  }
+  .bg-error * {
+    @apply text-error-content;
+  }
 }
 
 @layer components {

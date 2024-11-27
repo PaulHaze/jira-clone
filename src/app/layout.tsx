@@ -15,10 +15,9 @@ const geistMono = localFont({
   weight: '100 900',
 });
 
-// !CHANGETHIS
 export const metadata: Metadata = {
-  title: 'CHANGE THIS',
-  description: 'CHANGE THIS',
+  title: 'Jira Cloned',
+  description: 'A clone of Jira',
 };
 
 export default function RootLayout({

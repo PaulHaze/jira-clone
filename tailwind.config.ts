@@ -8,7 +8,18 @@ export default {
   darkMode: ['selector', '[data-theme="dark"]'],
   theme: {
     extend: {
-      colors: {},
+      colors: {
+        'primary-muted': 'oklch(var(--primary-muted) / <alpha-value>)',
+        base: {
+          '400': 'oklch(var(--base-400-oklch) / <alpha-value>)',
+          '500': 'oklch(var(--base-500-oklch) / <alpha-value>)',
+          '600': 'oklch(var(--base-600-oklch) / <alpha-value>)',
+        },
+        content: {
+          '200': 'oklch(var(--content-200) / <alpha-value>)',
+          '300': 'oklch(var(--content-300) / <alpha-value>)',
+        },
+      },
       fontSize: {
         xs: '0.75rem',
         sm: '0.875rem',
@@ -143,17 +154,19 @@ export default {
     themes: [
       {
         light: {
-          primary: '#71c4ef',
-          secondary: '#d4eaf7',
-          accent: '#00668c',
-          neutral: '#454b4e',
-          'base-100': '#fffefb',
-          'base-200': '#f5f4f1',
-          'base-300': '#edede9',
-          '--primary-muteD': '83.24% 0.029 231.52',
-          '--base-100-oklch': '99.7% 0.004 91.45',
-          // '--base-200-oklch': '96.71% 0.004 91.45',
-          // '--base-300-oklch': '84.2% 0.004 91.45',
+          primary: '#5155c3',
+          // 'primary-content': '#d0e3ff',
+          secondary: '#9b9cf7',
+          accent: '#f59362',
+          neutral: '#929293',
+          'base-100': 'oklch(99.72% 0.0028 84.56)',
+          'base-200': 'oklch(97.82% 0.0034 247.86)',
+          'base-300': 'oklch(95.15% 0.0046 258.32)',
+          '--base-400-oklch': '90.94% 0.0058 264.53',
+          '--primary-muted': '96% 0.0187 289.33',
+          '--content-200': '47.23% 0.0355 268.67',
+          '--content-300': '27.23% 0.0355 268.67',
+
           /* 
 					*EXAMPLE - ESSENTIAL
 					"primary": "#a991f7",
