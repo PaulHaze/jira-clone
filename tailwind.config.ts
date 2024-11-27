@@ -19,6 +19,8 @@ export default {
           '200': 'oklch(var(--content-200) / <alpha-value>)',
           '300': 'oklch(var(--content-300) / <alpha-value>)',
         },
+        light: 'oklch(var(--light) / <alpha-value>)',
+        muted: 'oklch(var(--muted) / <alpha-value>)',
       },
       fontSize: {
         xs: '0.75rem',
@@ -155,9 +157,8 @@ export default {
       {
         light: {
           primary: '#5155c3',
-          // 'primary-content': '#d0e3ff',
           secondary: '#9b9cf7',
-          accent: '#f59362',
+          accent: '#bd531e',
           neutral: '#929293',
           'base-100': 'oklch(99.72% 0.0028 84.56)',
           'base-200': 'oklch(97.82% 0.0034 247.86)',
@@ -166,6 +167,8 @@ export default {
           '--primary-muted': '96% 0.0187 289.33',
           '--content-200': '47.23% 0.0355 268.67',
           '--content-300': '27.23% 0.0355 268.67',
+          '--light': '62.64% 0.0254 266.79',
+          '--muted': '48.61% 0.0337 267.99',
 
           /* 
 					*EXAMPLE - ESSENTIAL
