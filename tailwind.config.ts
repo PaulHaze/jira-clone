@@ -11,9 +11,7 @@ export default {
       colors: {
         'primary-muted': 'oklch(var(--primary-muted) / <alpha-value>)',
         base: {
-          '400': 'oklch(var(--base-400-oklch) / <alpha-value>)',
-          '500': 'oklch(var(--base-500-oklch) / <alpha-value>)',
-          '600': 'oklch(var(--base-600-oklch) / <alpha-value>)',
+          '400': 'oklch(var(--base-400) / <alpha-value>)',
         },
         content: {
           '200': 'oklch(var(--content-200) / <alpha-value>)',
@@ -163,10 +161,8 @@ export default {
           'base-100': 'oklch(99.72% 0.0028 84.56)',
           'base-200': 'oklch(97.82% 0.0034 247.86)',
           'base-300': 'oklch(95.15% 0.0046 258.32)',
-          '--base-400-oklch': '90.94% 0.0058 264.53',
+          '--base-400': '90.94% 0.0058 264.53',
           '--primary-muted': '96% 0.0187 289.33',
-          '--content-200': '47.23% 0.0355 268.67',
-          '--content-300': '27.23% 0.0355 268.67',
           '--light': '62.64% 0.0254 266.79',
           '--muted': '48.61% 0.0337 267.99',
 
@@ -219,15 +215,18 @@ export default {
       },
       {
         dark: {
-          primary: '#4d648d',
-          secondary: '#1F3A5F',
-          accent: '#cee8ff',
-          neutral: '#454b4e',
-          'base-100': '#0F1C2E',
-          'base-200': '#1f2b3e',
-          'base-300': '#374357',
-          '--primary-muted': '81.3% 0.068 264.49',
-          '--base-100-oklch': '22.45% 0.04 256.74',
+          primary: '#c471eb',
+          '--primary-muted': '74.78% 0.0609 321.27',
+          secondary: '#d2aef9',
+          accent: '#fea66a',
+          neutral: '#272831',
+          'base-100': '#07071f',
+          'base-200': '#10102b',
+          'base-300': '#181a33',
+
+          '--base-400': '25.84% 0.0592 278.81',
+          '--light': '75.75% 0.0334 275.86',
+          '--muted': '61.13% 0.0351 277.53',
           //* Custom colour variables can also be added.
           //* Use the OKLCH colour space
           //* Add the variable to Tailwind
