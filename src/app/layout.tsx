@@ -33,7 +33,7 @@ export default function RootLayout({
         <ThemeProvider>
           <div className="relative">
             <div className="absolute right-2 top-3">
-              <div className="h-8 w-8 flex-center">
+              <div className="h-5 w-5">
                 <ThemeToggle />
               </div>
             </div>
