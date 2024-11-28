@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
   h1 {
     @apply text-4xl font-normal leading-normal;
   }

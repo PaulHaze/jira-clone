@@ -257,8 +257,9 @@ export default {
       },
       {
         dark: {
-          primary: '#c471eb',
+          primary: '#a64ed0',
           '--primary-muted': '74.78% 0.0609 321.27',
+          'primary-content': '#ddebff',
           secondary: '#d2aef9',
           accent: '#fea66a',
           neutral: '#272831',
