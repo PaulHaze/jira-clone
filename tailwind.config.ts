@@ -2,6 +2,7 @@ import type { Config } from 'tailwindcss';
 import typographyPlugin from '@tailwindcss/typography';
 import daisyui from 'daisyui';
 import plugin from 'tailwindcss/plugin';
+import tailwindAnimate from 'tailwindcss-animate';
 
 import daisyuiColorObj from 'daisyui/src/theming';
 
@@ -124,6 +125,7 @@ export default {
     },
   },
   plugins: [
+    tailwindAnimate,
     typographyPlugin,
     daisyui,
     plugin(({ addUtilities, matchUtilities, theme }) => {
