@@ -1,16 +1,48 @@
 'use client';
 
+import { useEffect } from 'react';
 import { useTheme } from 'next-themes';
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
-  const toggleTheme = () => setTheme(theme === 'dark' ? 'light' : 'dark');
+  // const toggleTheme = () => setTheme(theme === 'dark' ? 'light' : 'dark');
+
+  useEffect(() => {
+    // set a class of light or dark onto the main body
+    // this is for shadcn as that requires class
+    // and daisyUi requires data-theme
+    document.documentElement.className = theme!;
+  }, []);
+
+  const changeTheme = () => {
+    const newTheme = theme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
+    document.documentElement.className = newTheme;
+  };
 
   return (
-    <button onClick={toggleTheme} aria-label="auto" aria-live="polite" className="theme-toggle">
-      <svg className="sun-and-moon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+    <button
+      onClick={changeTheme}
+      aria-label="auto"
+      aria-live="polite"
+      className="theme-toggle h-5 w-5"
+    >
+      <svg
+        className="sun-and-moon"
+        aria-hidden="true"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+      >
         {/* SUN */}
-        <circle className="sun" cx="12" cy="12" r="6" mask="url(#moon-mask)" fill="currentColor" />
+        <circle
+          className="sun"
+          cx="12"
+          cy="12"
+          r="6"
+          mask="url(#moon-mask)"
+          fill="currentColor"
+        />
         <g className="sun-beams" stroke="currentColor">
           <line x1="12" y1="1" x2="12" y2="3" />
           <line x1="12" y1="21" x2="12" y2="23" />
