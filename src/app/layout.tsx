@@ -33,9 +33,13 @@ export default function RootLayout({
         <ThemeProvider>
           <div className="relative">
             <div className="absolute right-2 top-3">
+<<<<<<< HEAD
               <div className="h-5 w-5">
                 <ThemeToggle />
               </div>
+=======
+              <ThemeToggle />
+>>>>>>> shadcn
             </div>
             {children}
           </div>

@@ -2,6 +2,9 @@ import type { Config } from 'tailwindcss';
 import typographyPlugin from '@tailwindcss/typography';
 import daisyui from 'daisyui';
 import plugin from 'tailwindcss/plugin';
+import tailwindAnimate from 'tailwindcss-animate';
+
+import daisyuiColorObj from 'daisyui/src/theming';
 
 export default {
   content: ['./src/**/*.{js,ts,jsx,tsx,json}'],
@@ -9,6 +12,36 @@ export default {
   theme: {
     extend: {
       colors: {
+        border: daisyuiColorObj['base-content'],
+        input: daisyuiColorObj['base-content'],
+        ring: daisyuiColorObj['base-content'],
+        background: daisyuiColorObj['base-100'],
+        foreground: daisyuiColorObj['base-content'],
+        primary: {
+          DEFAULT: daisyuiColorObj['primary'],
+          foreground: daisyuiColorObj['primary-content'],
+        },
+        secondary: {
+          DEFAULT: daisyuiColorObj['secondary'],
+          foreground: daisyuiColorObj['secondary-content'],
+        },
+        destructive: {
+          DEFAULT: daisyuiColorObj['error'],
+          foreground: daisyuiColorObj['error-content'],
+        },
+
+        accent: {
+          DEFAULT: daisyuiColorObj['accent'],
+          foreground: daisyuiColorObj['accent-content'],
+        },
+        popover: {
+          DEFAULT: daisyuiColorObj['base-100'],
+          foreground: daisyuiColorObj['base-content'],
+        },
+        card: {
+          DEFAULT: daisyuiColorObj['base-100'],
+          foreground: daisyuiColorObj['base-content'],
+        },
         'primary-muted': 'oklch(var(--primary-muted) / <alpha-value>)',
         base: {
           '400': 'oklch(var(--base-400) / <alpha-value>)',
@@ -19,6 +52,11 @@ export default {
         },
         light: 'oklch(var(--light) / <alpha-value>)',
         muted: 'oklch(var(--muted) / <alpha-value>)',
+      },
+      borderRadius: {
+        lg: 'var(--rounded-btn)',
+        md: 'calc(var(--rounded-btn) - 2px)',
+        sm: 'calc(var(--rounded-btn) - 4px)',
       },
       fontSize: {
         xs: '0.75rem',
@@ -87,6 +125,7 @@ export default {
     },
   },
   plugins: [
+    tailwindAnimate,
     typographyPlugin,
     daisyui,
     plugin(({ addUtilities, matchUtilities, theme }) => {
@@ -158,6 +197,7 @@ export default {
           secondary: '#9b9cf7',
           accent: '#bd531e',
           neutral: '#929293',
+
           'base-100': 'oklch(99.72% 0.0028 84.56)',
           'base-200': 'oklch(97.82% 0.0034 247.86)',
           'base-300': 'oklch(95.15% 0.0046 258.32)',
@@ -165,6 +205,8 @@ export default {
           '--primary-muted': '96% 0.0187 289.33',
           '--light': '62.64% 0.0254 266.79',
           '--muted': '48.61% 0.0337 267.99',
+          // 'base-content': '#161616',
+          // '--base-content': daisyuiColorObj['base-content'],
 
           /* 
 					*EXAMPLE - ESSENTIAL
@@ -215,8 +257,9 @@ export default {
       },
       {
         dark: {
-          primary: '#c471eb',
+          primary: '#a64ed0',
           '--primary-muted': '74.78% 0.0609 321.27',
+          'primary-content': '#ddebff',
           secondary: '#d2aef9',
           accent: '#fea66a',
           neutral: '#272831',
