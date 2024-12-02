@@ -3,8 +3,9 @@ import eslint from '@eslint/js';
 import pluginNext from '@next/eslint-plugin-next';
 import tseslint from 'typescript-eslint';
 import pluginReact from 'eslint-plugin-react';
-import pluginImport from 'eslint-plugin-import';
 import eslintConfigPrettier from 'eslint-config-prettier';
+
+// import pluginImport from 'eslint-plugin-import';
 
 const baseConfig = {
   name: 'Base Configuration',
