@@ -194,6 +194,7 @@ export default {
       {
         light: {
           primary: '#5155c3',
+          'primary-content': '#ffffff',
           secondary: '#9b9cf7',
           accent: '#bd531e',
           neutral: '#929293',
@@ -259,7 +260,7 @@ export default {
         dark: {
           primary: '#a64ed0',
           '--primary-muted': '74.78% 0.0609 321.27',
-          'primary-content': '#ddebff',
+          'primary-content': '#ffffff',
           secondary: '#d2aef9',
           accent: '#fea66a',
           neutral: '#272831',
