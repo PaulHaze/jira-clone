@@ -56,6 +56,13 @@ export default tseslint.config(
   // pluginImport.flatConfigs.recommended,
   nextLint,
 
+  // CUSTOM RULES
+  {
+    rules: {
+      'react/prop-types': off,
+    },
+  },
+
   // Turn off prettier conflicts
   eslintConfigPrettier,
 
