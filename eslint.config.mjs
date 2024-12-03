@@ -32,7 +32,17 @@ const tsConfig = {
   ignores: ['e2e/**', '**/*.spec.{ts,tsx}', '**/*.test.{ts,tsx}'],
   extends: [eslint.configs.recommended, ...tseslint.configs.recommended],
   // custom rules
-  rules: {},
+  rules: {
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      {
+        argsIgnorePattern: '^_',
+        caughtErrorsIgnorePattern: '^_',
+        destructuredArrayIgnorePattern: '^_',
+        varsIgnorePattern: '^_',
+      },
+    ],
+  },
 };
 
 const nextLint = {
@@ -59,7 +69,7 @@ export default tseslint.config(
   // CUSTOM RULES
   {
     rules: {
-      'react/prop-types': off,
+      'react/prop-types': 'off',
     },
   },
 
