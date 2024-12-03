@@ -282,7 +282,7 @@ export default {
           primary: '#a64ed0',
           '--primary-light': '65.24% 0.2012 313.11',
           '--primary-dark': '45.06% 0.2012 313.11',
-          '--primary-muted': '74.78% 0.0609 321.27',
+          '--primary-muted': '34.78% 0.0609 321.27',
           'primary-content': '#ffffff',
           secondary: '#d2aef9',
           '--secondary-light': '89.57% 0.11 306.03',

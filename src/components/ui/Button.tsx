@@ -10,18 +10,18 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          'btn font-bold bg-gradient-to-b from-primary-light to-primary-dark  text-primary-foreground hover:from-primary-dark hover:to-primary-dark',
+          'btn font-bold bg-gradient-to-b from-primary-light to-primary-dark  text-primary-foreground hover:from-primary hover:to-primary',
         secondary:
-          'btn font-bold bg-gradient-to-b from-secondary-light to-secondary-dark text-secondary-foreground hover:bg-secondary/80',
-        destructive:
-          'btn font-bold bg-gradient-to-b from-destructive-light to-destructive-dark text-destructive-foreground hover:bg-destructive/90',
-        outline:
-          'border font-bold border-input bg-background hover:bg-accent hover:text-accent-foreground',
-
-        ghost: 'font-bold hover:bg-accent hover:text-accent-foreground',
-        link: ' font-bold text-primary underline-offset-4 hover:underline',
+          'btn font-bold bg-gradient-to-b from-secondary-light to-secondary-dark text-secondary-foreground hover:from-secondary hover:to-secondary',
         accent:
-          'btn font-bold bg-gradient-to-b from-accent-light to-accent-dark text-accent-content',
+          'btn font-bold bg-gradient-to-b from-accent-light to-accent-dark text-accent-content hover:from-accent-dark hover:to-accent-dark',
+        destructive:
+          'btn font-bold bg-gradient-to-b from-destructive-light to-destructive-dark text-destructive-foreground hover:from-destructive-dark hover:to-destructive-dark',
+        outline:
+          'btn border font-bold border-input bg-background hover:bg-accent hover:text-accent-foreground',
+        ghost: 'font-bold hover:bg-accent hover:text-accent-foreground',
+        muted:
+          'bg-primary-muted text-content-light/80 hover:text-content-muted/80',
       },
       size: {
         default: 'h-10 px-4 py-2',

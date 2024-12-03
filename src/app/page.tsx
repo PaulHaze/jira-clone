@@ -12,7 +12,7 @@ export default function Home() {
         <Button variant="accent">accent</Button>
         <Button variant="destructive">destructive</Button>
         <Button variant="ghost">ghost</Button>
-        <Button variant="link">link</Button>
+        <Button variant="muted">link</Button>
         <Button variant="outline">outline</Button>
       </div>
     </div>
