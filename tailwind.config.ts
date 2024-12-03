@@ -195,9 +195,12 @@ export default {
         light: {
           primary: '#5155c3',
           'primary-content': '#ffffff',
-          secondary: '#9b9cf7',
-          accent: '#bd531e',
+          secondary: '#b5bdfe',
+          'secondary-content': '#212543',
+          accent: '#ff8a00',
+          'accent-content': '#ffe8cd',
           neutral: '#929293',
+          error: '#e01d44',
 
           'base-100': 'oklch(99.72% 0.0028 84.56)',
           'base-200': 'oklch(97.82% 0.0034 247.86)',
@@ -268,7 +271,9 @@ export default {
           '--primary-muted': '74.78% 0.0609 321.27',
           'primary-content': '#ffffff',
           secondary: '#d2aef9',
-          accent: '#fea66a',
+          accent: '#fdd7c1',
+          'accent-content': '#af4c22',
+
           neutral: '#272831',
           'base-100': '#07071f',
           'base-200': '#10102b',
