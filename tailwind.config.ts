@@ -33,11 +33,15 @@ export default {
         destructive: {
           DEFAULT: daisyuiColorObj['error'],
           foreground: daisyuiColorObj['error-content'],
+          light: 'oklch(var(--error-light) / <alpha-value>)',
+          dark: 'oklch(var(--error-dark) / <alpha-value>)',
         },
 
         accent: {
           DEFAULT: daisyuiColorObj['accent'],
           foreground: daisyuiColorObj['accent-content'],
+          light: 'oklch(var(--accent-light) / <alpha-value>)',
+          dark: 'oklch(var(--accent-dark) / <alpha-value>)',
         },
         popover: {
           DEFAULT: daisyuiColorObj['base-100'],
@@ -199,6 +203,7 @@ export default {
   daisyui: {
     themes: [
       {
+        // *LIGHT!!
         light: {
           primary: '#5155c3',
           'primary-content': '#ffffff',
@@ -206,13 +211,17 @@ export default {
           '--primary-dark': '45.4% 0.1494 275.82',
           '--primary-muted': '96% 0.0187 289.33',
           secondary: '#b5bdfe',
-          '--secondary-light': '89.57% 0.0934 278.71',
-          '--secondary-dark': '62.12% 0.0934 278.71',
           'secondary-content': '#212543',
+          '--secondary-light': '91.57% 0.0934 278.71',
+          '--secondary-dark': '79.12% 0.0934 278.71',
           accent: '#ff8a00',
-          'accent-content': '#ffe8cd',
+          'accent-content': '#56422a',
+          '--accent-light': '85.78% 0.1294 57.36',
+          '--accent-dark': '79.12% 0.1294 57.36',
           neutral: '#929293',
           error: '#e01d44',
+          '--error-light': '60.11% 0.2212 18.74',
+          '--error-dark': '45.11% 0.2212 18.74',
 
           'base-100': 'oklch(99.72% 0.0028 84.56)',
           'base-200': 'oklch(97.82% 0.0034 247.86)',
@@ -227,12 +236,6 @@ export default {
           '--chart-5': '27 87% 67%',
 
           /* 
-					*EXAMPLE - ESSENTIAL
-					"primary": "#a991f7",
-          "secondary": "#f6d860",
-          "accent": "#37cdbe",
-          "neutral": "#3d4451",
-          "base-100": "#ffffff",
 
 					*EXAMPLE - FULL SET
 					* These extra colours are set automatically based on the colours chosen above
@@ -274,6 +277,7 @@ export default {
         },
       },
       {
+        // *DARK!!
         dark: {
           primary: '#a64ed0',
           '--primary-light': '65.24% 0.2012 313.11',
@@ -282,10 +286,14 @@ export default {
           'primary-content': '#ffffff',
           secondary: '#d2aef9',
           '--secondary-light': '89.57% 0.11 306.03',
-          '--secondary-dark': '62.12% 0.11 306.03',
+          '--secondary-dark': '72.12% 0.11 306.03',
           accent: '#fdd7c1',
-          'accent-content': '#af4c22',
+          'accent-content': '#8c3815',
+          '--accent-light': '92.56% 0.0519 51.85',
+          '--accent-dark': '81.33% 0.0519 51.85',
           error: '#e01d44',
+          '--error-light': '60.11% 0.2212 18.74',
+          '--error-dark': '42.11% 0.2212 18.74',
 
           neutral: '#272831',
           'base-100': '#07071f',

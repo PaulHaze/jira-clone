@@ -5,22 +5,23 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',
+  'inline-flex  items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',
   {
     variants: {
       variant: {
         default:
-          'btn bg-gradient-to-b from-primary-light to-primary-dark  text-primary-foreground hover:bg-primary/90',
-        destructive:
-          'btn bg-destructive text-destructive-foreground hover:bg-destructive/90',
-        outline:
-          'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
+          'btn font-bold bg-gradient-to-b from-primary-light to-primary-dark  text-primary-foreground hover:from-primary-dark hover:to-primary-dark',
         secondary:
-          'btn bg-secondary text-secondary-foreground hover:bg-secondary/80',
-        ghost: 'hover:bg-accent hover:text-accent-foreground',
-        link: 'text-primary underline-offset-4 hover:underline',
+          'btn font-bold bg-gradient-to-b from-secondary-light to-secondary-dark text-secondary-foreground hover:bg-secondary/80',
+        destructive:
+          'btn font-bold bg-gradient-to-b from-destructive-light to-destructive-dark text-destructive-foreground hover:bg-destructive/90',
+        outline:
+          'border font-bold border-input bg-background hover:bg-accent hover:text-accent-foreground',
+
+        ghost: 'font-bold hover:bg-accent hover:text-accent-foreground',
+        link: ' font-bold text-primary underline-offset-4 hover:underline',
         accent:
-          'btn bg-accent text-accent-content underline-offset-4 hover:underline',
+          'btn font-bold bg-gradient-to-b from-accent-light to-accent-dark text-accent-content',
       },
       size: {
         default: 'h-10 px-4 py-2',

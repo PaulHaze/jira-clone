@@ -9,11 +9,11 @@ export default function Home() {
         <Button variant="secondary" className="btn">
           <h5>secondary</h5>
         </Button>
+        <Button variant="accent">accent</Button>
         <Button variant="destructive">destructive</Button>
         <Button variant="ghost">ghost</Button>
         <Button variant="link">link</Button>
         <Button variant="outline">outline</Button>
-        <Button variant="accent">accent</Button>
       </div>
     </div>
   );
