@@ -20,10 +20,15 @@ export default {
         primary: {
           DEFAULT: daisyuiColorObj['primary'],
           foreground: daisyuiColorObj['primary-content'],
+          light: 'oklch(var(--primary-light) / <alpha-value>)',
+          dark: 'oklch(var(--primary-dark) / <alpha-value>)',
+          muted: 'oklch(var(--primary-muted) / <alpha-value>)',
         },
         secondary: {
           DEFAULT: daisyuiColorObj['secondary'],
           foreground: daisyuiColorObj['secondary-content'],
+          light: 'oklch(var(--secondary-light) / <alpha-value>)',
+          dark: 'oklch(var(--secondary-dark) / <alpha-value>)',
         },
         destructive: {
           DEFAULT: daisyuiColorObj['error'],
@@ -42,17 +47,17 @@ export default {
           DEFAULT: daisyuiColorObj['base-100'],
           foreground: daisyuiColorObj['base-content'],
         },
-        'primary-muted': 'oklch(var(--primary-muted) / <alpha-value>)',
         base: {
           '400': 'oklch(var(--base-400) / <alpha-value>)',
         },
         content: {
           '200': 'oklch(var(--content-200) / <alpha-value>)',
           '300': 'oklch(var(--content-300) / <alpha-value>)',
+          light: 'oklch(var(--light) / <alpha-value>)',
+          muted: 'oklch(var(--muted) / <alpha-value>)',
         },
-        light: 'oklch(var(--light) / <alpha-value>)',
-        muted: 'oklch(var(--muted) / <alpha-value>)',
       },
+
       borderRadius: {
         lg: 'var(--rounded-btn)',
         md: 'calc(var(--rounded-btn) - 2px)',
@@ -118,6 +123,8 @@ export default {
         '4xl': '32rem',
       },
       backgroundImage: {
+        'primary-gradient':
+          'linear-gradient(180deg, #626dcf 0%, #ff581c 97.73%)',
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
@@ -195,7 +202,12 @@ export default {
         light: {
           primary: '#5155c3',
           'primary-content': '#ffffff',
+          '--primary-light': '62.4% 0.1494 275.82',
+          '--primary-dark': '45.4% 0.1494 275.82',
+          '--primary-muted': '96% 0.0187 289.33',
           secondary: '#b5bdfe',
+          '--secondary-light': '89.57% 0.0934 278.71',
+          '--secondary-dark': '62.12% 0.0934 278.71',
           'secondary-content': '#212543',
           accent: '#ff8a00',
           'accent-content': '#ffe8cd',
@@ -206,7 +218,6 @@ export default {
           'base-200': 'oklch(97.82% 0.0034 247.86)',
           'base-300': 'oklch(95.15% 0.0046 258.32)',
           '--base-400': '90.94% 0.0058 264.53',
-          '--primary-muted': '96% 0.0187 289.33',
           '--light': '62.64% 0.0254 266.79',
           '--muted': '48.61% 0.0337 267.99',
           '--chart-1': '12 76% 61%',
@@ -214,9 +225,6 @@ export default {
           '--chart-3': '197 37% 24%',
           '--chart-4': '43 74% 66%',
           '--chart-5': '27 87% 67%',
-
-          // 'base-content': '#161616',
-          // '--base-content': daisyuiColorObj['base-content'],
 
           /* 
 					*EXAMPLE - ESSENTIAL
@@ -268,11 +276,16 @@ export default {
       {
         dark: {
           primary: '#a64ed0',
+          '--primary-light': '65.24% 0.2012 313.11',
+          '--primary-dark': '45.06% 0.2012 313.11',
           '--primary-muted': '74.78% 0.0609 321.27',
           'primary-content': '#ffffff',
           secondary: '#d2aef9',
+          '--secondary-light': '89.57% 0.11 306.03',
+          '--secondary-dark': '62.12% 0.11 306.03',
           accent: '#fdd7c1',
           'accent-content': '#af4c22',
+          error: '#e01d44',
 
           neutral: '#272831',
           'base-100': '#07071f',
