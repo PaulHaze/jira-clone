@@ -31,8 +31,8 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider>
-          <div className="relative">
-            <div className="absolute right-2 top-3">
+          <div className="relative min-h-screen">
+            <div className="absolute bottom-2 right-1">
               <ThemeToggle />
             </div>
             {children}
