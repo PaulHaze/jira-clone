@@ -7,8 +7,9 @@ type AuthLayoutProps = {
 export default function AuthLayout({ children }: AuthLayoutProps) {
   return (
     <div>
-      <div className="p-2">
-        <Logo className="h-10 w-10 text-primary" />
+      <div className="flex items-center p-2">
+        <Logo className="h-8 w-8 text-primary" />
+        <h2 className="ml-2 font-black text-secondary">Jira Cloned</h2>
       </div>
       {children}
     </div>
