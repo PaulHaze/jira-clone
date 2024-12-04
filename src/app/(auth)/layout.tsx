@@ -8,8 +8,8 @@ export default function AuthLayout({ children }: AuthLayoutProps) {
   return (
     <main className="min-h-screen bg-base-200">
       {/* NAV */}
-      <div className="mx-auto mb-4 max-w-lg">
-        <div className="flex items-center justify-between px-6 pt-4 md:px-8 lg:px-0">
+      <div className="mx-auto mb-4 max-w-lg bg-base-200">
+        <div className="flex items-center justify-between px-6 py-4 md:px-8 lg:px-0">
           {/* LOGO */}
           <div className="flex items-center">
             <Logo className="h-8 w-8 text-primary" />
@@ -17,7 +17,7 @@ export default function AuthLayout({ children }: AuthLayoutProps) {
           </div>
 
           {/* BUTTON */}
-          <Button variant="secondary">Sign In</Button>
+          <Button variant={'neutral'}>Sign In</Button>
         </div>
       </div>
       {children}
