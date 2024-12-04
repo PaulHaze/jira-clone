@@ -1,10 +1,11 @@
-import { Button } from '@/components/ui';
+import { Button, Input } from '@/components/ui';
 
 export default function Home() {
   return (
     <div className="flex flex-col items-center pt-10">
-      <h1 className="">Jira Cloned</h1>
+      <h1 className="mb-10">Jira Cloned</h1>
       <div className="flex flex-col items-center gap-y-4">
+        <h2>BUTTONS</h2>
         <Button>default</Button>
         <Button size="lg" variant="secondary" className="">
           secondary
@@ -19,6 +20,8 @@ export default function Home() {
           disabled
         </Button>
         <Button variant="outline">outline</Button>
+        <h2 className="mt-10">INPUT</h2>
+        <Input placeholder="Test" />
       </div>
     </div>
   );
