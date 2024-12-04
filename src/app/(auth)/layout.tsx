@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import { Logo } from '@/components/ui';
 
 type AuthLayoutProps = {
   children: React.ReactNode;
@@ -7,14 +7,8 @@ type AuthLayoutProps = {
 export default function AuthLayout({ children }: AuthLayoutProps) {
   return (
     <div>
-      <div className="p-5">
-        <Image
-          src="logo.svg"
-          height={50}
-          width={50}
-          alt="logo"
-          className="text-red-500"
-        />
+      <div className="p-2">
+        <Logo className="h-10 w-10 text-primary" />
       </div>
       {children}
     </div>
