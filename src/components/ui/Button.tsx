@@ -23,7 +23,7 @@ const buttonVariants = cva(
         outline:
           'border border-input bg-background font-bold hover:bg-accent hover:text-accent-foreground',
         neutral:
-          'border border-input/10 bg-base-100 font-bold text-primary hover:bg-base-300',
+          'bg-base-50 border border-input/30 font-bold text-primary hover:bg-base-300',
         ghost:
           'btn-ghost font-semibold hover:bg-accent hover:text-accent-foreground',
         muted:

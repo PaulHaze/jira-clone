@@ -52,6 +52,7 @@ export default {
           foreground: daisyuiColorObj['base-content'],
         },
         base: {
+          '50': 'oklch(var(--base-50) / <alpha-value>)',
           '400': 'oklch(var(--base-400) / <alpha-value>)',
         },
         content: {
@@ -223,6 +224,7 @@ export default {
           '--error-light': '60.11% 0.2212 18.74',
           '--error-dark': '45.11% 0.2212 18.74',
 
+          '--base-50': '100% 0.0058 264.53',
           'base-100': 'oklch(99.72% 0.0028 84.56)',
           'base-200': 'oklch(97.82% 0.0034 247.86)',
           'base-300': 'oklch(95.15% 0.0046 258.32)',
@@ -296,6 +298,7 @@ export default {
           '--error-dark': '42.11% 0.2212 18.74',
 
           neutral: '#272831',
+          '--base-50': '12.01% 0.0518 275.3',
           'base-100': '#07071f',
           'base-200': '#10102b',
           'base-300': '#181a33',
