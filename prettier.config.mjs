@@ -10,7 +10,7 @@ const config = {
   printWidth: 80,
   tabWidth: 2,
   plugins: ['prettier-plugin-tailwindcss'],
-  tailwindFunctions: ['cn'],
+  tailwindFunctions: ['cva', 'cn'],
 };
 
 export default config;
