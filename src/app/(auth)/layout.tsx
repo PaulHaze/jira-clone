@@ -17,7 +17,7 @@ export default function AuthLayout({ children }: AuthLayoutProps) {
           </div>
 
           {/* BUTTON */}
-          <Button variant={'neutral'}>Sign In</Button>
+          <Button variant="neutral">Sign In</Button>
         </div>
         {children}
       </div>

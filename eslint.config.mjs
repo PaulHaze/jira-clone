@@ -3,9 +3,8 @@ import eslint from '@eslint/js';
 import pluginNext from '@next/eslint-plugin-next';
 import tseslint from 'typescript-eslint';
 import pluginReact from 'eslint-plugin-react';
+import pluginImport from 'eslint-plugin-import';
 import eslintConfigPrettier from 'eslint-config-prettier';
-
-// import pluginImport from 'eslint-plugin-import';
 
 const baseConfig = {
   name: 'Base Configuration',
@@ -28,7 +27,7 @@ const baseConfig = {
 
 const tsConfig = {
   name: 'Typescript Config',
-  files: ['**/*.{ts,tsx}'],
+  files: ['**/*.{ts,tsx,mjs}'],
   ignores: ['e2e/**', '**/*.spec.{ts,tsx}', '**/*.test.{ts,tsx}'],
   extends: [eslint.configs.recommended, ...tseslint.configs.recommended],
   // custom rules
@@ -50,7 +49,7 @@ const nextLint = {
   plugins: {
     '@next/next': pluginNext,
   },
-  files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
+  files: ['**/*.{js,mjs,cjs,ts,jsx,tsx,mjs}'],
   rules: {
     ...pluginNext.configs.recommended.rules,
     ...pluginNext.configs['core-web-vitals'].rules,
@@ -58,12 +57,19 @@ const nextLint = {
   },
 };
 
+const importPluginConfig = {
+  name: 'Import Plugin Config',
+  files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
+  ...pluginImport.flatConfigs.recommended,
+  rules: {},
+};
+
 export default tseslint.config(
   baseConfig,
   tsConfig,
   pluginReact.configs.flat.recommended,
   pluginReact.configs.flat['jsx-runtime'],
-  // pluginImport.flatConfigs.recommended,
+  importPluginConfig,
   nextLint,
 
   // CUSTOM RULES
