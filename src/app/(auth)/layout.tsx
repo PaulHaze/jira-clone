@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Button, Logo } from '@/components/ui';
 
 type AuthLayoutProps = {
@@ -12,8 +13,10 @@ export default function AuthLayout({ children }: AuthLayoutProps) {
         <div className="flex items-center justify-between py-4">
           {/* LOGO */}
           <div className="flex items-center">
-            <Logo className="h-8 w-8 text-primary" />
-            <h3 className="ml-2 font-black text-primary">JiraCloned</h3>
+            <Link href="/" className="flex items-center">
+              <Logo className="h-8 w-8 text-primary" />
+              <h3 className="ml-2 font-black text-primary">JiraCloned</h3>
+            </Link>
           </div>
 
           {/* BUTTON */}
