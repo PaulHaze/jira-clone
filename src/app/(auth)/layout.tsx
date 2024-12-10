@@ -10,7 +10,7 @@ export default function AuthLayout({ children }: AuthLayoutProps) {
     <main className="min-h-screen bg-base-200">
       <div className="mx-auto mb-4 max-w-lg bg-base-200 px-6 md:px-8 xl:px-0">
         {/* NAV */}
-        <div className="flex items-center justify-between py-4">
+        <nav className="flex items-center justify-between py-4">
           {/* LOGO */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
@@ -20,9 +20,11 @@ export default function AuthLayout({ children }: AuthLayoutProps) {
           </div>
 
           {/* BUTTON */}
-          <Button variant="neutral">Sign In</Button>
+          <Button variant="neutral">Sign Up</Button>
+        </nav>
+        <div className="flex flex-col items-center justify-center pt-10">
+          {children}
         </div>
-        {children}
       </div>
     </main>
   );
