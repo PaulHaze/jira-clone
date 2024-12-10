@@ -32,7 +32,7 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <div className="relative min-h-screen">
-            <div className="absolute bottom-2 right-1">
+            <div className="absolute bottom-2 right-3">
               <ThemeToggle />
             </div>
             {children}
