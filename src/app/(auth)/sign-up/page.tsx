@@ -1,7 +1,9 @@
+import { SignInCard } from '@/features';
+
 export default function SignUpPage() {
   return (
-    <div>
-      <p>SignUpPage Placeholder</p>
+    <div className="w-full">
+      <SignInCard />
     </div>
   );
 }

@@ -21,14 +21,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn(`${inter.className} min-h-screen antialiased`)}>
+      <body
+        className={cn(`${inter.className} relative min-h-screen antialiased`)}
+      >
         <ThemeProvider>
-          <div className="relative">
-            <div className="absolute bottom-2 right-3">
-              <ThemeToggle />
-            </div>
-            {children}
+          <div className="absolute bottom-2 right-3">
+            <ThemeToggle />
           </div>
+          {children}
         </ThemeProvider>
       </body>
     </html>
