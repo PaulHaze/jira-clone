@@ -23,3 +23,4 @@ export * from './Textarea';
 export * from './ThemeToggle';
 export * from './Toaster';
 export * from './Logo';
+export * from './DottedSeparator';
