@@ -128,11 +128,8 @@ export default {
         '4xl': '32rem',
       },
       backgroundImage: {
-        'primary-gradient':
-          'linear-gradient(180deg, #626dcf 0%, #ff581c 97.73%)',
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'faded-separator':
+          'radial-gradient(circle, oklch(var(--light)) 25%, transparent 95%)',
       },
     },
   },

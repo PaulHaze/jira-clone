@@ -8,14 +8,17 @@ import {
   Input,
   Button,
   DottedSeparator,
+  Separator,
 } from '@/components/ui';
 
 export function SignInCard() {
   return (
     <Card className="mx-auto max-w-xs border-base-300">
-      <CardHeader className="mb-1">
+      <CardHeader className="mb-1 flex-center">
         <CardTitle>
-          <h3 className="font-semibold opacity-85">Welcome Back!</h3>
+          <h3 className="font-semibold text-primary opacity-90">
+            Welcome Back!
+          </h3>
         </CardTitle>
       </CardHeader>
       <CardContent>
@@ -34,9 +37,10 @@ export function SignInCard() {
               console.log('pwd');
             }}
           />
-          <DottedSeparator className="opacity-50" color="muted" />
+          <DottedSeparator className="opacity-50" color="light" />
+
           <Button className="w-full">Log In</Button>
-          <hr className="opacity-40" />
+          <Separator className="bg-faded-separator" />
           <Button className="w-full">Log In with Google</Button>
           <Button className="w-full">Log In With Github</Button>
         </form>

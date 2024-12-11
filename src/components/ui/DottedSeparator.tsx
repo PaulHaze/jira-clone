@@ -8,7 +8,8 @@ type DottedSeparatorProps = {
   direction?: 'horizontal' | 'vertical';
 };
 
-// --light --muted for variables
+// backgroundImage: `radial-gradient(circle, oklch(var(--${color})) 25%, transparent 95%)`,
+// good for fading lines
 
 export function DottedSeparator({
   className,
@@ -19,7 +20,6 @@ export function DottedSeparator({
   direction = 'horizontal',
 }: DottedSeparatorProps) {
   const isHorizontal = direction === 'horizontal';
-  // const dotColor = `var(--light)`;
   return (
     <div
       className={cn(
@@ -29,7 +29,19 @@ export function DottedSeparator({
         className,
       )}
     >
-      <p className={`text-content-${color}`}>DottedSeparator Placeholder</p>
+      <div
+        className={isHorizontal ? 'flex-grow' : 'flex-grow-0'}
+        style={{
+          width: isHorizontal ? '100%' : height,
+          height: isHorizontal ? height : '100%',
+          backgroundImage: `radial-gradient(circle, oklch(var(--${color})) 25%, transparent 95%)`,
+          backgroundSize: isHorizontal
+            ? `${parseInt(dotSize) + parseInt(gapSize)}px ${height}`
+            : `${height} ${parseInt(dotSize) + parseInt(gapSize)}px`,
+          backgroundRepeat: isHorizontal ? 'repeat-x' : 'repeat-y',
+          backgroundPosition: 'center',
+        }}
+      />
     </div>
   );
 }
