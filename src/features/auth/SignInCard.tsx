@@ -7,7 +7,6 @@ import {
   CardTitle,
   Input,
   Button,
-  DottedSeparator,
   Separator,
 } from '@/components/ui';
 
@@ -16,7 +15,7 @@ export function SignInCard() {
     <Card className="mx-auto max-w-xs border-base-300">
       <CardHeader className="mb-1 flex-center">
         <CardTitle>
-          <h3 className="font-semibold text-primary opacity-90">
+          <h3 className="font-semibold text-primary dark:text-secondary">
             Welcome Back!
           </h3>
         </CardTitle>
@@ -37,10 +36,9 @@ export function SignInCard() {
               console.log('pwd');
             }}
           />
-          <DottedSeparator className="opacity-50" color="light" />
 
           <Button className="w-full">Log In</Button>
-          <Separator className="bg-faded-separator" />
+          <Separator className="bg-faded-separator opacity-50" />
           <Button className="w-full">Log In with Google</Button>
           <Button className="w-full">Log In With Github</Button>
         </form>
