@@ -23,9 +23,8 @@ export function DottedSeparator({
   return (
     <div
       className={cn(
-        isHorizontal
-          ? 'flex w-full items-center'
-          : 'flex h-full flex-col items-center',
+        'flex items-center',
+        isHorizontal ? 'w-full' : 'h-full flex-col',
         className,
       )}
     >
@@ -34,7 +33,7 @@ export function DottedSeparator({
         style={{
           width: isHorizontal ? '100%' : height,
           height: isHorizontal ? height : '100%',
-          backgroundImage: `radial-gradient(circle, oklch(var(--${color})) 25%, transparent 95%)`,
+          backgroundImage: `radial-gradient(circle, oklch(var(--${color})) 25%, transparent 25%)`,
           backgroundSize: isHorizontal
             ? `${parseInt(dotSize) + parseInt(gapSize)}px ${height}`
             : `${height} ${parseInt(dotSize) + parseInt(gapSize)}px`,
