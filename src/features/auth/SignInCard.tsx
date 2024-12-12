@@ -38,7 +38,7 @@ export function SignInCard() {
           />
 
           <Button className="w-full">Log In</Button>
-          <Separator className="bg-faded-separator opacity-50" />
+          <Separator className="bg-radial from-secondary to-transparent opacity-50" />
           <Button className="w-full">Log In with Google</Button>
           <Button className="w-full">Log In With Github</Button>
         </form>
