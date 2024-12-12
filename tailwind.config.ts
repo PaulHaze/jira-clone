@@ -128,6 +128,7 @@ export default {
         '4xl': '32rem',
       },
       backgroundImage: {
+        radial: 'radial-gradient(circle, var(--tw-gradient-stops))',
         'faded-separator':
           'radial-gradient(circle, oklch(var(--light)) 25%, transparent 95%)',
       },
