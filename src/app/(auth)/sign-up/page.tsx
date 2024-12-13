@@ -1,3 +1,5 @@
+'use client';
+
 import { SignInCard } from '@/features';
 
 export default function SignUpPage() {

@@ -10,7 +10,7 @@ import {
 
 import { GoogleLogo, GitHubLogo } from '@/components/ui/logos';
 
-export function SignInCard() {
+export function SignUpCard() {
   return (
     <Card className="mx-auto max-w-xs border-base-300">
       <CardHeader className="mb-1 flex-center">
