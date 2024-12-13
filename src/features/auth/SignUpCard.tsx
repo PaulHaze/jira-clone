@@ -24,7 +24,7 @@ import { GoogleLogo, GitHubLogo } from '@/components/ui/logos';
 
 const formSchema = z.object({
   username: z.string(),
-  email: z.string().trim().min(3, 'Required').email(),
+  email: z.string().email(),
   password: z
     .string()
     .min(8, 'Password must be at least 8 characters long.')
