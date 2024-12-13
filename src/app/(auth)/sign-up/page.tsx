@@ -1,11 +1,11 @@
 'use client';
 
-import { SignInCard } from '@/features';
+import { SignUpCard } from '@/features';
 
 export default function SignUpPage() {
   return (
     <div className="w-full">
-      <SignInCard />
+      <SignUpCard />
     </div>
   );
 }

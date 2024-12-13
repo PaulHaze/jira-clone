@@ -3,6 +3,7 @@ import {
   CardContent,
   CardHeader,
   CardTitle,
+  CardDescription,
   Input,
   Button,
   Separator,
@@ -16,15 +17,28 @@ export function SignUpCard() {
       <CardHeader className="mb-1 flex-center">
         <CardTitle>
           <h3 className="font-semibold text-primary dark:text-secondary">
-            Welcome Back!
+            Welcome To Jira Cloned!
           </h3>
         </CardTitle>
+        <CardDescription className="px-3 pt-1">
+          Sign by entering your details below, or buy using one of the single
+          sign on providers below.
+        </CardDescription>
       </CardHeader>
       <CardContent>
         <form className="space-y-5">
           <Input
             required
-            placeholder="Email"
+            placeholder="Enter your name"
+            type="text"
+            value={''}
+            onChange={() => {
+              console.log('name');
+            }}
+          />
+          <Input
+            required
+            placeholder="Enter your email"
             type="email"
             value={''}
             onChange={() => {
@@ -34,7 +48,7 @@ export function SignUpCard() {
           <Input
             required
             value={''}
-            placeholder="Password "
+            placeholder="Choose a password"
             type="password"
             onChange={() => {
               console.log('pwd');
@@ -43,20 +57,20 @@ export function SignUpCard() {
             max={256}
           />
 
-          <Button className="w-full">Log In</Button>
+          <Button className="w-full">Sign Up</Button>
         </form>
       </CardContent>
 
       <Separator className="bg-radial mb-8 mt-2 from-secondary to-transparent opacity-40" />
       <CardContent className="mb-6 space-y-7">
         <Button variant="secondary" className="w-full">
-          Log In with Google
+          Sign up with Google
           <div className="ml-0.5 h-7 w-7 opacity-90">
             <GoogleLogo />
           </div>
         </Button>
         <Button variant="secondary" className="w-full">
-          Log In With Github
+          Sign up with Github
           <div className="ml-0.5 h-6 w-6 opacity-90">
             <GitHubLogo />
           </div>
