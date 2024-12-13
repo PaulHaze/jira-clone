@@ -22,13 +22,13 @@ import {
 import { GoogleLogo, GitHubLogo } from '@/components/ui/logos';
 
 const formSchema = z.object({
-  name: z.string(),
-  email: z.string().email(),
+  username: z.string(),
+  email: z.string().trim().min(3, 'Required').email(),
   password: z
     .string()
-    .min(8, 'Password must be at least 8 characters long.') // Minimum length
-    .max(128, 'Password cannot exceed 128 characters.') // Maximum length
-    .regex(/[0-9]/, 'Password must contain at least one number.') // At least one number
+    .min(8, 'Password must be at least 8 characters long.')
+    .max(128, 'Password cannot exceed 128 characters.')
+    .regex(/[0-9]/, 'Password must contain at least one number.')
     .regex(
       /[!@#$%^&*(),.?":{}|<>]/,
       'Password must contain at least one special character.',
@@ -39,11 +39,17 @@ export function SignUpCard() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      name: '',
+      username: '',
       email: '',
       password: '',
     },
+    // mode: 'onChange',
   });
+
+  const onSubmit = (data: z.infer<typeof formSchema>) => {
+    console.log('Form data:', data);
+  };
+
   return (
     <Card className="mx-auto max-w-xs border-base-300">
       <CardHeader className="mb-1 flex-center">
@@ -59,38 +65,69 @@ export function SignUpCard() {
       </CardHeader>
       <CardContent>
         <Form {...form}>
-          <form className="space-y-5">
-            <Input
-              required
-              placeholder="Enter your name"
-              type="text"
-              value={''}
-              onChange={() => {
-                console.log('name');
-              }}
-            />
-            <Input
-              required
-              placeholder="Enter your email"
-              type="email"
-              value={''}
-              onChange={() => {
-                console.log('email');
-              }}
-            />
-            <Input
-              required
-              value={''}
-              placeholder="Choose a password"
-              type="password"
-              onChange={() => {
-                console.log('pwd');
-              }}
-              min={8}
-              max={256}
+          <form className="space-y-5" onSubmit={form.handleSubmit(onSubmit)}>
+            {/* USERNAME */}
+            <FormField
+              control={form.control}
+              name="username"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="opacity-80">User name</FormLabel>
+                  <FormControl>
+                    <Input
+                      required
+                      placeholder="Enter your name"
+                      type="text"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
             />
 
-            <Button className="w-full">Sign Up</Button>
+            {/* EMAIL */}
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="opacity-80">Email</FormLabel>
+                  <FormControl>
+                    <Input
+                      required
+                      placeholder="Enter your email"
+                      type="email"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="password"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="opacity-80">Password</FormLabel>
+                  <FormControl>
+                    <Input
+                      required
+                      type="password"
+                      placeholder="Choose a password"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <Button type="submit" className="w-full">
+              Sign Up
+            </Button>
           </form>
         </Form>
       </CardContent>
