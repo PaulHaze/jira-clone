@@ -1,3 +1,7 @@
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
+
 import {
   Card,
   CardContent,
@@ -6,11 +10,42 @@ import {
   Input,
   Button,
   Separator,
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
 } from '@/components/ui';
 
 import { GoogleLogo, GitHubLogo } from '@/components/ui/logos';
 
+const formSchema = z.object({
+  email: z.string().trim().min(3, 'Required').email(),
+  password: z
+    .string()
+    .min(8, 'Password must be at least 8 characters long.')
+    .max(128, 'Password cannot exceed 128 characters.')
+    .regex(/[0-9]/, 'Password must contain at least one number.')
+    .regex(
+      /[!@#$%^&*(),.?":{}|<>]/,
+      'Password must contain at least one special character.',
+    ),
+});
+
 export function SignInCard() {
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      email: '',
+      password: '',
+    },
+    // mode: 'onChange',
+  });
+
+  const onSubmit = (data: z.infer<typeof formSchema>) => {
+    console.log('Form data:', data);
+  };
   return (
     <Card className="mx-auto max-w-xs border-base-300">
       <CardHeader className="mb-1 flex-center">
@@ -21,30 +56,52 @@ export function SignInCard() {
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <form className="space-y-5">
-          <Input
-            required
-            placeholder="Email"
-            type="email"
-            value={''}
-            onChange={() => {
-              console.log('email');
-            }}
-          />
-          <Input
-            required
-            value={''}
-            placeholder="Password "
-            type="password"
-            onChange={() => {
-              console.log('pwd');
-            }}
-            min={8}
-            max={256}
-          />
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
+            {/* EMAIL */}
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="opacity-80">Email</FormLabel>
+                  <FormControl>
+                    <Input
+                      required
+                      placeholder="Enter your email"
+                      type="email"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
 
-          <Button className="w-full">Log In</Button>
-        </form>
+            <FormField
+              control={form.control}
+              name="password"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="opacity-80">Password</FormLabel>
+                  <FormControl>
+                    <Input
+                      required
+                      type="password"
+                      placeholder="Choose a password"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <Button type="submit" className="w-full">
+              Log In
+            </Button>
+          </form>
+        </Form>
       </CardContent>
 
       <Separator className="bg-radial mb-8 mt-2 from-secondary to-transparent opacity-40" />
