@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -146,6 +147,13 @@ export function SignUpCard() {
             <GitHubLogo />
           </div>
         </Button>
+      </CardContent>
+      <Separator className="mb-6 bg-radial from-secondary to-transparent opacity-40" />
+      <CardContent className="flex-center">
+        <p className="mr-3">Already have an account?</p>
+        <Link href="/sign-in" className="font-bold text-secondary">
+          Sign In
+        </Link>
       </CardContent>
     </Card>
   );
