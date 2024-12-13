@@ -10,6 +10,8 @@ import {
   Separator,
 } from '@/components/ui';
 
+import { GoogleLogo, GitHubLogo } from '@/components/ui/logos';
+
 export function SignInCard() {
   return (
     <Card className="mx-auto max-w-xs border-base-300">
@@ -23,13 +25,17 @@ export function SignInCard() {
       <CardContent>
         <form className="space-y-5">
           <Input
+            required
             placeholder="Email"
             type="email"
+            value={''}
             onChange={() => {
               console.log('email');
             }}
           />
           <Input
+            required
+            value={''}
             placeholder="Password "
             type="password"
             onChange={() => {
@@ -39,8 +45,18 @@ export function SignInCard() {
 
           <Button className="w-full">Log In</Button>
           <Separator className="bg-radial from-secondary to-transparent opacity-50" />
-          <Button className="w-full">Log In with Google</Button>
-          <Button className="w-full">Log In With Github</Button>
+          <Button className="w-full">
+            Log In with Google
+            <div className="ml-0.5 h-7 w-7 opacity-90">
+              <GoogleLogo />
+            </div>
+          </Button>
+          <Button className="w-full">
+            Log In With Github
+            <div className="ml-0.5 h-6 w-6 opacity-90">
+              <GitHubLogo />
+            </div>
+          </Button>
         </form>
       </CardContent>
     </Card>
