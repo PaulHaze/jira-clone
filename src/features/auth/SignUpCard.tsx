@@ -11,6 +11,12 @@ import {
   Input,
   Button,
   Separator,
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
 } from '@/components/ui';
 
 import { GoogleLogo, GitHubLogo } from '@/components/ui/logos';
@@ -18,7 +24,15 @@ import { GoogleLogo, GitHubLogo } from '@/components/ui/logos';
 const formSchema = z.object({
   name: z.string(),
   email: z.string().email(),
-  password: z.string().min(8).max(256),
+  password: z
+    .string()
+    .min(8, 'Password must be at least 8 characters long.') // Minimum length
+    .max(128, 'Password cannot exceed 128 characters.') // Maximum length
+    .regex(/[0-9]/, 'Password must contain at least one number.') // At least one number
+    .regex(
+      /[!@#$%^&*(),.?":{}|<>]/,
+      'Password must contain at least one special character.',
+    ),
 });
 
 export function SignUpCard() {
@@ -44,39 +58,41 @@ export function SignUpCard() {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <form className="space-y-5">
-          <Input
-            required
-            placeholder="Enter your name"
-            type="text"
-            value={''}
-            onChange={() => {
-              console.log('name');
-            }}
-          />
-          <Input
-            required
-            placeholder="Enter your email"
-            type="email"
-            value={''}
-            onChange={() => {
-              console.log('email');
-            }}
-          />
-          <Input
-            required
-            value={''}
-            placeholder="Choose a password"
-            type="password"
-            onChange={() => {
-              console.log('pwd');
-            }}
-            min={8}
-            max={256}
-          />
+        <Form {...form}>
+          <form className="space-y-5">
+            <Input
+              required
+              placeholder="Enter your name"
+              type="text"
+              value={''}
+              onChange={() => {
+                console.log('name');
+              }}
+            />
+            <Input
+              required
+              placeholder="Enter your email"
+              type="email"
+              value={''}
+              onChange={() => {
+                console.log('email');
+              }}
+            />
+            <Input
+              required
+              value={''}
+              placeholder="Choose a password"
+              type="password"
+              onChange={() => {
+                console.log('pwd');
+              }}
+              min={8}
+              max={256}
+            />
 
-          <Button className="w-full">Sign Up</Button>
-        </form>
+            <Button className="w-full">Sign Up</Button>
+          </form>
+        </Form>
       </CardContent>
 
       <Separator className="bg-radial mb-8 mt-2 from-secondary to-transparent opacity-40" />
