@@ -4,7 +4,7 @@ import { SignInCard } from '@/features';
 
 export default function SignInPage() {
   return (
-    <div>
+    <div className="w-full">
       <SignInCard />
     </div>
   );

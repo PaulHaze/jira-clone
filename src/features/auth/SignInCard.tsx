@@ -1,3 +1,4 @@
+'use client';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -104,7 +105,7 @@ export function SignInCard() {
         </Form>
       </CardContent>
 
-      <Separator className="bg-radial mb-8 mt-2 from-secondary to-transparent opacity-40" />
+      <Separator className="mb-8 mt-2 bg-radial from-secondary to-transparent opacity-40" />
       <CardContent className="mb-6 space-y-7">
         <Button variant="secondary" className="w-full">
           Log In with Google
