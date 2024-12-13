@@ -1,3 +1,7 @@
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
+
 import {
   Card,
   CardContent,
@@ -11,7 +15,21 @@ import {
 
 import { GoogleLogo, GitHubLogo } from '@/components/ui/logos';
 
+const formSchema = z.object({
+  name: z.string(),
+  email: z.string().email(),
+  password: z.string().min(8).max(256),
+});
+
 export function SignUpCard() {
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: '',
+      email: '',
+      password: '',
+    },
+  });
   return (
     <Card className="mx-auto max-w-xs border-base-300">
       <CardHeader className="mb-1 flex-center">
