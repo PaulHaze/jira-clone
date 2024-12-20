@@ -8,7 +8,7 @@ export function AuthNav() {
   const pathname = usePathname();
   const isSignUp = pathname === '/sign-up';
   return (
-    <nav className="flex items-center justify-between pt-4">
+    <nav className="mx-auto flex max-w-xl items-center justify-between bg-base-200 px-6 pt-4 md:px-8 xl:px-0">
       {/* LOGO */}
       <div className="flex items-center">
         <Link href="/" className="flex items-center">
